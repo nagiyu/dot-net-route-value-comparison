@@ -16,7 +16,8 @@ namespace DotNetFramework
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
+                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional },
+                namespaces: new[] { "DotNetFramework.Controllers" } // 名前空間を指定
             );
         }
     }
