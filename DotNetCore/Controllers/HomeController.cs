@@ -1,3 +1,4 @@
+using DotNetCore.Helpers;
 using DotNetCore.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
@@ -27,6 +28,14 @@ namespace DotNetCore.Controllers
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        }
+
+        public IActionResult GenerateUrl()
+        {
+            string url = Url.GenerateUrlForArea();
+
+            ViewBag.Url = url;
+            return View();
         }
     }
 }
